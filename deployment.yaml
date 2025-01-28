@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: verbalyze-app
+  labels:
+    app: verbalyze-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: verbalyze-app
+  template:
+    metadata:
+      labels:
+        app: verbalyze-app
+    spec:
+      containers:
+      - name: verbalyze-app
+        image: laxman210/verbalyze
+        ports:
+        - containerPort: 80
+~                             
