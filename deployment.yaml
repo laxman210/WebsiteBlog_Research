@@ -1,22 +1,19 @@
-apiVersion: apps/v1
+ apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: verbalyze-app
-  labels:
-    app: verbalyze-app
+  name: nodejs-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: verbalyze-app
+      app: nodejs-app
   template:
     metadata:
       labels:
-        app: verbalyze-app
+        app: nodejs-app
     spec:
       containers:
-      - name: verbalyze-app
-        image: laxman210/verbalyze
+      - name: nodejs-container
+        image: laxman210/verbalyze:latest
         ports:
-        - containerPort: 80
-~                             
+        - containerPort: 3000                       
