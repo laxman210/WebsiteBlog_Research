@@ -1,14 +1,12 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
-  name: node-exporter
-  namespace: prometheus-node-exporter
+  name: nodejs-service
 spec:
   selector:
-      app: node-exporter
+    app: nodejs-app
   ports:
-  - name: node-exporter
-    protocol: TCP
-    port: 9100
-    targetPort: 9100
-  type: NodePort
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+  type: LoadBalancer
